@@ -108,7 +108,7 @@ def divisora_producto_detalle(df):
         df_precios_filtrado['cmoneda'] = df_precios_filtrado['cmoneda'].replace({'Pesos': 'MXN', 'Dolares': 'USD'})
 
     return df_tbl_productos, df_precios_filtrado
-        
+       
 def actualizar_estatus_productos():
     engine = get_db_engine()
     if not engine: return

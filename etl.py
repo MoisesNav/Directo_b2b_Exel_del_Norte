@@ -286,7 +286,7 @@ def actualizar_catalogos_db(df_old: pd.DataFrame, df_old_price: pd.DataFrame) ->
         
 def actualizar_tipo_cambio_usd():
     # Token y URL Banxico
-    token = "3da738eaf30e07518304fea87b5d610f7e2e16f6fa917a3c61b7ad5a3cdcd861"
+    token = os.getenv("BANXICO_TOKEN")
     url = "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43718/datos/oportuno"
     headers = {"Bmx-Token": token}
 

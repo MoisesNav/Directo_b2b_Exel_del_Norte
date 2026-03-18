@@ -204,12 +204,13 @@ def actualizar_fichas_icecat():
     cursor = conn.cursor()
     
     # IMPORTANTE: Se añade ::jsonb para asegurar el casteo nativo en Postgres
+    # IMPORTANTE: Se añade "jCatalogObjectCloud" entre comillas dobles
     query = """
         UPDATE tbl_producto 
         SET jimagen_icecat = %s::jsonb,
             jmultimedia_icecat = %s::jsonb,
             jinfo_general_icecat = %s::jsonb,
-            jCatalogObjectCloud = %s::jsonb
+            "jCatalogObjectCloud" = %s::jsonb
         WHERE csku = %s;
     """
     errores_sql = []

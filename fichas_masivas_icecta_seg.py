@@ -1,13 +1,28 @@
-# ================================================
-# Script para actualizar fichas Icecat en BD (Nodos Separados)
-# ================================================
-# Descripción:
-#   - Obtiene productos sin datos de Icecat desde la BD
-#   - Consume la API en paralelo usando sesiones persistentes
-#   - Extrae únicamente los nodos: Image, Multimedia, GeneralInfo, CatalogObjectCloud
-#   - Actualiza la tabla `tbl_producto` en bloque (batch) casteando a jsonb
-#   - Ignora errores de actualización SQL y los registra
-# ================================================
+# ==========================================================
+# PROCESO: ENRIQUECIMIENTO DE FICHAS TÉCNICAS (ICECAT)
+#   - Obtener información técnica enriquecida desde API Icecat
+#   - Extraer nodos relevantes del catálogo (estructura controlada)
+#   - Minimizar uso de memoria eliminando datos innecesarios
+#   - Actualizar productos en base de datos con formato JSONB
+#
+# ENTRADAS:
+#   - Tabla: tbl_producto (productos sin información Icecat)
+#   - API Icecat
+#
+# SALIDAS:
+#   - Campos JSONB actualizados en tbl_producto:
+#       - jimagen_icecat
+#       - jmultimedia_icecat
+#       - jinfo_general_icecat
+#       - jCatalogObjectCloud
+#
+# PROCESOS CLAVE:
+#   - Consumo API concurrente
+#   - Manejo de sesiones HTTP persistentes
+#   - Extracción selectiva de nodos JSON
+#   - Serialización segura (JSON limpio)
+#   - Actualización masiva con fallback por fila
+# ==========================================================
 
 import json
 import requests
@@ -20,10 +35,10 @@ from dotenv import load_dotenv
 import os
 import sys
 
-# CONFIGURACIÓN
+# Inicializar variables de entorno
 load_dotenv()
 
-# LOGGING
+# Configurar logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -31,8 +46,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# --- CONFIGURACIÓN DB ---
+# CONEXIÓN A BASE DE DATOS
 def get_db_engine():
+    """Establecer conexión directa a PostgreSQL."""
     try:
         user = os.getenv("DB_USER")
         password = os.getenv("DB_PASS")
@@ -43,31 +59,31 @@ def get_db_engine():
         if not all([user, password, host, port, database]):
             raise ValueError("Faltan variables de entorno para la BD")
 
-        engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database}')
-        return engine
+        return create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database}')
     except Exception as e:
         logger.error(f"Error conectando a BD: {e}")
         return None
 
-# Utilidad para evitar errores con nodos vacíos y limpiar caracteres nulos
+
+# UTILIDAD: SERIALIZACIÓN SEGURA JSON
+
 def safe_json_dump(val):
+    """Serializar JSON eliminando caracteres nulos incompatibles con PostgreSQL."""
     if val is None:
-        return None  # Se convertirá en NULL en PostgreSQL
+        return None
     return json.dumps(val, ensure_ascii=False).replace('\x00', '').replace('\\u0000', '')
 
-# ==========================================================
-# Función principal para actualizar fichas Icecat
-# ==========================================================
+
+# FUNCIÓN PRINCIPAL
+
 def actualizar_fichas_icecat():
-    # ==========================
-    # 1. Obtener productos pendientes
-    # ==========================
+
+    # Obtener productos sin información Icecat
     engine = get_db_engine()
     if engine is None:
         return
 
     try:
-        # Optimización: Filtramos por los que no tienen Info General (puedes ajustar el WHERE)
         query = """
             SELECT csku, cmarca 
             FROM tbl_producto 
@@ -76,16 +92,16 @@ def actualizar_fichas_icecat():
         df_informacion = pd.read_sql(query, engine)
         print(f"📦 Catálogo obtenido: {len(df_informacion)} registros pendientes.")
     except Exception as e:
-        print("❌ Error al ejecutar la consulta:", e)
+        print(" Error al ejecutar la consulta:", e)
         return engine.dispose()
 
     if df_informacion.empty:
-        print("✅ No hay productos pendientes por actualizar.")
+        print(" No hay productos pendientes por actualizar.")
         return engine.dispose()
 
-    # ==========================
-    # 2. Configuración API Icecat
-    # ==========================
+
+    # CONFIGURACIÓN API ICECAT
+
     username = os.getenv("ICECAT_USERNAME")
     language = "es"
     app_key = os.getenv("ICECAT_APP_KEY")
@@ -94,14 +110,17 @@ def actualizar_fichas_icecat():
     resultados, errores = [], []
     contador_exitos = 0
 
+    # Reutilizar conexión HTTP
     session = requests.Session()
 
-    # ==========================
-    # 3. Función de llamada API (Optimizada para parseo selectivo)
-    # ==========================
+
+    # FUNCIÓN DE CONSUMO API
+
     def hacer_llamada(idx, product_code, brand):
+        """Consultar API Icecat y extraer nodos relevantes."""
         nonlocal contador_exitos
 
+        # Validar marca
         if pd.isna(brand) or str(brand).strip() == "":
             errores.append({"index": idx, "sku": product_code, "brand": brand, "error": "Marca vacía"})
             return None
@@ -120,10 +139,11 @@ def actualizar_fichas_icecat():
             if response.status_code == 200:
                 try:
                     full_json = response.json()
-                    # Accedemos al nodo principal "data" que contiene las etiquetas
+
+                    # Extraer nodo principal
                     data_node = full_json.get("data", {})
                     
-                    # Extraemos SOLO lo que necesitamos para no saturar memoria
+                    # Seleccionar únicamente nodos requeridos
                     extracted_data = {
                         "Image": data_node.get("Image"),
                         "Multimedia": data_node.get("Multimedia"),
@@ -146,9 +166,7 @@ def actualizar_fichas_icecat():
         errores.append({"index": idx, "sku": product_code, "brand": brand, "error": error_msg})
         return None
 
-    # ==========================
-    # 4. Ejecutar llamadas en paralelo
-    # ==========================
+    # EJECUCIÓN CONCURRENTE
     tasks = [
         (idx, row['csku'], row['cmarca'])
         for idx, row in df_informacion.iterrows()
@@ -166,9 +184,8 @@ def actualizar_fichas_icecat():
             if result:
                 resultados.append(result)
 
-    # ==========================
-    # 5. Construcción de DataFrame con Columnas Separadas
-    # ==========================
+
+    # TRANSFORMACIÓN A DATAFRAME
     df_resultados = pd.DataFrame([
         {
             "sku": r["sku"],
@@ -180,18 +197,15 @@ def actualizar_fichas_icecat():
     ], columns=["sku", "jimagen", "jmultimedia", "jinfo", "jcatalog"])
 
     if df_resultados.empty:
-        print("⚠️ No se obtuvieron resultados válidos de la API. Finalizando proceso.")
+        print("⚠️ No se obtuvieron resultados válidos de la API.")
         engine.dispose()
         return
 
-    # Renombramos y cruzamos para asegurar consistencia
+    # Asegurar consistencia con catálogo original
     df_informacion = df_informacion.rename(columns={'csku': 'sku'})
     df_merged = pd.merge(df_resultados, df_informacion, how="left", on="sku")
 
-    # ==========================
-    # 6. Actualizar base de datos (Batch con jsonb)
-    # ==========================
-    # Preparamos las tuplas en el orden exacto del query
+    # ACTUALIZACIÓN MASIVA
     updates = list(zip(
         df_merged['jimagen'],
         df_merged['jmultimedia'],
@@ -203,8 +217,6 @@ def actualizar_fichas_icecat():
     conn = engine.raw_connection()
     cursor = conn.cursor()
     
-    # IMPORTANTE: Se añade ::jsonb para asegurar el casteo nativo en Postgres
-    # IMPORTANTE: Se añade "jCatalogObjectCloud" entre comillas dobles
     query = """
         UPDATE tbl_producto 
         SET jimagen_icecat = %s::jsonb,
@@ -213,14 +225,17 @@ def actualizar_fichas_icecat():
             "jCatalogObjectCloud" = %s::jsonb
         WHERE csku = %s;
     """
+
     errores_sql = []
 
     try:
+        # Ejecución batch
         execute_batch(cursor, query, updates, page_size=500)
         conn.commit()
-    except Exception as e_batch:
+    except Exception:
+        # Fallback fila por fila
         conn.rollback()
-        print("⚠️ Advertencia: Ocurrió un error en la carga masiva. Aislando errores fila por fila...")
+        print("Advertencia: error en batch, ejecución individual...")
         
         for img, multi, info, cat, sku in updates:
             try:
@@ -228,23 +243,18 @@ def actualizar_fichas_icecat():
                 conn.commit()
             except Exception as e_row:
                 conn.rollback()
-                print(f"❌ Error al actualizar SKU {sku}: {e_row}")
                 errores_sql.append({"sku": sku, "error": str(e_row)})
 
     cursor.close()
     conn.close()
     engine.dispose()
 
-    # ==========================
-    # 7. Resumen y log de errores
-    # ==========================
-    print("\n✅ Actualización completa")
-    print(f"📊 Total respuestas exitosas procesadas: {len(resultados)}")
-    print(f"❌ Total errores API: {len(errores)}")
-    print(f"⚠️ Errores SQL capturados: {len(errores_sql)}")
+    # Resumen final
+    print("\nActualización completa")
+    print(f"Total respuestas exitosas: {len(resultados)}")
+    print(f"Errores API: {len(errores)}")
+    print(f"Errores SQL: {len(errores_sql)}")
 
-# ==========================================================
-# Ejecución del script
-# ==========================================================
+# Ejecución
 if __name__ == "__main__":
     actualizar_fichas_icecat()

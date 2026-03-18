@@ -1,10 +1,31 @@
-# DIRECTOB2B/run_pipeline.py
+# ==========================================================
+# PROCESO: ORQUESTACIÓN PIPELINE B2B
+#   - Coordinar ejecución secuencial de procesos ETL
+#   - Controlar flujo de ejecución y dependencias
+#   - Registrar eventos y tiempos de ejecución
+#   - Detener pipeline ante fallos críticos
+#
+# FLUJO:
+#   1. Extracción proveedor (Exel  tabla temporal)
+#   2. Proceso ETL (merge, precios, ML, estatus)
+#   3. Enriquecimiento Icecat
+#
+# SALIDAS:
+#   - Logs de ejecución
+#   - Estado de ejecución del pipeline
+#
+# PROCESOS CLAVE:
+#   - Ejecución de scripts como subprocesos
+#   - Manejo de errores críticos
+#   - Medición de tiempos
+# ==========================================================
+
 import subprocess
 import sys
 import time
 import logging
 
-# Configuración de logs para el pipeline global
+# Configurar logging global del pipeline
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s -  [PIPELINE] - %(levelname)s - %(message)s',
@@ -15,48 +36,52 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# EJECUCIÓN DE SCRIPTS
 def run_script(script_name):
-    """Ejecuta un script de Python y captura su salida."""
+    """Ejecutar script Python como subproceso y controlar errores."""
+    
     logger.info(f"Iniciando: {script_name}...")
     start_time = time.time()
     
     try:
-        # Ejecutamos el script como un subproceso
+        # Ejecutar script externo
         result = subprocess.run(
             [sys.executable, script_name],
             check=True,
             text=True,
-            capture_output=False # Cambiar a True si prefieres no ver el log en tiempo real
+            capture_output=False
         )
+
         elapsed = time.time() - start_time
-        logger.info(f" Finalizado con éxito: {script_name} ({elapsed:.2f}s)")
+        logger.info(f"Finalizado con éxito: {script_name} ({elapsed:.2f}s)")
         return True
-    except subprocess.CalledProcessError as e:
-        logger.error(f" Error crítico en {script_name}. El proceso se detendrá.")
+
+    except subprocess.CalledProcessError:
+        logger.error(f"Error crítico en {script_name}. Detener pipeline.")
         return False
 
+# FUNCIÓN PRINCIPAL
 def main():
     pipeline_start = time.time()
+
     logger.info("=== INICIANDO RUTINA DIARIA DE ACTUALIZACIÓN DIRECTOB2B ===")
 
-    # PASO 1: Extracción y Carga a Temporal (Exel)
-    # Es la fuente de verdad. Si falla, no hay nada nuevo que procesar.
+    # Extracción y carga temporal
     if not run_script("ob_cat_exel.py"):
         sys.exit(1)
 
-    # PASO 2: Merge ETL (Lógica B2B, Precios, Divisas y ML)
-    # Este script procesa la tabla temporal y la lleva a la producción.
+    # Proceso ETL principal
     if not run_script("etl.py"):
         sys.exit(1)
 
-    # PASO 3: Enriquecimiento de Fichas (Icecat)
-    # Es un proceso de mejora. Si falla, el catálogo ya está actualizado en precios,
-    # por lo que no detenemos el sistema, solo lo reportamos.
+    # Enriquecimiento Icecat (no crítico)
     if not run_script("fichas_masivas_icecta_seg.py"):
-        logger.warning("El enriquecimiento de Icecat no se completó, pero los precios están al día.")
+        logger.warning("Icecat no completado, pipeline continúa.")
 
     total_time = time.time() - pipeline_start
+
     logger.info(f"=== PIPELINE FINALIZADO EXITOSAMENTE en {total_time/60:.2f} minutos ===")
 
+# Ejecución
 if __name__ == "__main__":
     main()

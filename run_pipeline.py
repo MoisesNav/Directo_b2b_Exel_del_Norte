@@ -25,6 +25,36 @@ import sys
 import time
 import logging
 
+import warnings
+from sqlalchemy.engine.base import Engine
+
+# 1. Silenciamos la advertencia de Pandas para que no ensucie tus logs en Airflow
+warnings.filterwarnings('ignore', message='.*pandas only supports SQLAlchemy.*')
+warnings.filterwarnings('ignore', category=UserWarning, module='pandas')
+
+# 2. Monkey Patching: Le enseñamos al Engine de SQLAlchemy a comportarse como psycopg2
+def _compat_cursor(self):
+    # Creamos una conexión nativa y la guardamos en el engine para el commit
+    if not hasattr(self, '_shared_raw_conn'):
+        self._shared_raw_conn = self.raw_connection()
+    return self._shared_raw_conn.cursor()
+
+def _compat_commit(self):
+    # Permite que engine.commit() funcione
+    if hasattr(self, '_shared_raw_conn'):
+        self._shared_raw_conn.commit()
+
+def _compat_rollback(self):
+    # Permite que engine.rollback() funcione en caso de error
+    if hasattr(self, '_shared_raw_conn'):
+        self._shared_raw_conn.rollback()
+
+# Inyectamos los métodos en la clase nativa de SQLAlchemy
+Engine.cursor = _compat_cursor
+Engine.commit = _compat_commit
+Engine.rollback = _compat_rollback
+
+
 # Configurar logging global del pipeline
 logging.basicConfig(
     level=logging.INFO,

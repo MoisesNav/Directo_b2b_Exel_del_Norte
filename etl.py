@@ -165,7 +165,8 @@ def ponderacion_de_precio(engine):
             # Evitar división por cero en sum(peso_final)
             sum_peso = np.sum(peso_final)
             costo = np.sum(precios * peso_final) / sum_peso if sum_peso > 0 else mu
-            costo = float(round(costo * 1.05, 2))
+            costo = float(round(costo * 1.08, 2))
+            costo = float(round(costo * 1.16, 2))
 
             disponibilidad_total = int(disponibilidad.sum())
             resultados.append((costo, disponibilidad_total, sku))

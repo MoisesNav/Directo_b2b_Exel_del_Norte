@@ -1,0 +1,14 @@
+[
+  {
+    "path_completo": "Cómputo (Hardware) > PC Gaming > Audífonos Gamer",
+    "nivel_1": {"id": 1, "nombre": "Cómputo (Hardware)"},
+    "nivel_2": {"id": 14, "nombre": "PC Gaming"},
+    "nivel_3": {"id": 184, "nombre": "Audífonos Gamer"}
+  },
+  {
+    "path_completo": "Audio y Video > Audio > Audífonos Gamer",
+    "nivel_1": {"id": 3, "nombre": "Audio y Video"},
+    "nivel_2": {"id": 38, "nombre": "Audio"},
+    "nivel_3": {"id": 184, "nombre": "Audífonos Gamer"}
+  }
+]

@@ -100,7 +100,7 @@ def procesar_catalogo_exel(df: pd.DataFrame) -> pd.DataFrame:
         'id', 'marca_id', 'familia_id', 'subcategoria_id',
         'categoria_id', 'codigo_sat', 'precio_oferta', 'precio_sin_oferta',
         'familia_nombre', 'subcategoria_nombre',
-        'codigo_barras', 'oferta'
+        'codigo_barras', 'oferta','id_unidad_sat'
     ]
     df.drop(columns=columnas_eliminar, errors='ignore', inplace=True)
    

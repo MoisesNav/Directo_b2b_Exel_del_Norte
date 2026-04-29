@@ -117,7 +117,7 @@ def actualizar_estatus_productos(engine):
         with engine.begin() as conn:
             # Desactivar
             res_desc = conn.execute(text("""
-                UPDATE tbl_producto SET bestatus = 'f' 
+                UPDATE tbl_producto SET bestatus = 't' 
                 WHERE ndisponibilidad_total = 0 OR csku NOT IN (SELECT DISTINCT csku FROM tbl_detalle_producto) or ndisponibilidad_total is NULL
             """))
             # Activar
@@ -137,8 +137,6 @@ def ponderacion_de_precio(engine):
         query = """
             SELECT tdp.csku, tdp.cmoneda, tdp.nprecio, tdp.ndisponibilidad
             FROM tbl_detalle_producto tdp
-            WHERE tdp.nprecio > 0 
-            AND tdp.ndisponibilidad > 0
         """
         df = pd.read_sql(query, engine)
         
@@ -165,9 +163,9 @@ def ponderacion_de_precio(engine):
             # Evitar división por cero en sum(peso_final)
             sum_peso = np.sum(peso_final)
             costo = np.sum(precios * peso_final) / sum_peso if sum_peso > 0 else mu
-            costo = float(round(costo * 1.08, 2))
+            costo = float(round(costo /0.92, 2))
             costo = float(round(costo * 1.16, 2))
-
+            costo = int(costo)+(costo>int(costo))
             disponibilidad_total = int(disponibilidad.sum())
             resultados.append((costo, disponibilidad_total, sku))
 

@@ -1,14 +1,1026 @@
-[
-  {
-    "path_completo": "Cómputo (Hardware) > PC Gaming > Audífonos Gamer",
-    "nivel_1": {"id": 1, "nombre": "Cómputo (Hardware)"},
-    "nivel_2": {"id": 14, "nombre": "PC Gaming"},
-    "nivel_3": {"id": 184, "nombre": "Audífonos Gamer"}
-  },
-  {
-    "path_completo": "Audio y Video > Audio > Audífonos Gamer",
-    "nivel_1": {"id": 3, "nombre": "Audio y Video"},
-    "nivel_2": {"id": 38, "nombre": "Audio"},
-    "nivel_3": {"id": 184, "nombre": "Audífonos Gamer"}
+{
+  "msg": "OK",
+  "data": {
+    "Image": {
+      "LowPic": "https://images.icecat.biz/img/gallery_lows/61685df0c2997d0daaece1db8bdeaa1f4fb07d6e.jpg",
+      "HighPic": "https://images.icecat.biz/img/gallery/3bd48b267beb1465669cd1df43afa9827a8ff4e8.jpg",
+      "ThumbPic": "https://images.icecat.biz/img/gallery_thumbs/107cd3889a2e35369d7040451d93ec10b733cf22.jpg",
+      "LowPicSize": "8740",
+      "Pic500x500": "https://images.icecat.biz/img/gallery_mediums/e5d35a1c1aeeb1a7701e0e93417fe9a18b80eb76.jpg",
+      "HighPicSize": "319229",
+      "LowPicWidth": "200",
+      "HighPicWidth": "1600",
+      "LowPicHeight": "172",
+      "ThumbPicSize": "2254",
+      "HighPicHeight": "1374",
+      "Pic500x500Size": "36855",
+      "Pic500x500Width": "500",
+      "Pic500x500Height": "429"
+    },
+    "Gallery": [
+      {
+        "ID": "102686409",
+        "No": "1",
+        "Pic": "https://images.icecat.biz/img/gallery/3bd48b267beb1465669cd1df43afa9827a8ff4e8.jpg",
+        "Size": "319229",
+        "Type": "ProductImage",
+        "IsMain": "Y",
+        "LowPic": "https://images.icecat.biz/img/gallery_lows/61685df0c2997d0daaece1db8bdeaa1f4fb07d6e.jpg",
+        "LowSize": "8740",
+        "Updated": "2025-03-05 11:12:41",
+        "LowWidth": "200",
+        "PicWidth": "1600",
+        "ThumbPic": "https://images.icecat.biz/img/gallery_thumbs/107cd3889a2e35369d7040451d93ec10b733cf22.jpg",
+        "IsPrivate": "0",
+        "LowHeight": "172",
+        "PicHeight": "1374",
+        "Attributes": {
+          "OriginalFileName": ""
+        },
+        "Pic500x500": "https://images.icecat.biz/img/gallery_mediums/e5d35a1c1aeeb1a7701e0e93417fe9a18b80eb76.jpg",
+        "ThumbPicSize": "2254",
+        "Pic500x500Size": "36855",
+        "Pic500x500Width": "500",
+        "Pic500x500Height": "429"
+      },
+      {
+        "ID": "102686410",
+        "No": "2",
+        "Pic": "https://images.icecat.biz/img/gallery/de6c465f1ecb50f44ac227f389abf0def3dc9add.jpg",
+        "Size": "211743",
+        "Type": "ProductImage",
+        "IsMain": "N",
+        "LowPic": "https://images.icecat.biz/img/gallery_lows/9682488881495f150bc7a643306c07f7ed999834.jpg",
+        "LowSize": "5599",
+        "Updated": "2025-03-05 11:12:41",
+        "LowWidth": "200",
+        "PicWidth": "1600",
+        "ThumbPic": "https://images.icecat.biz/img/gallery_thumbs/ec4b27d16e5e98b7d387ceb317c0f93b8f5e1ab6.jpg",
+        "IsPrivate": "0",
+        "LowHeight": "172",
+        "PicHeight": "1374",
+        "Attributes": {
+          "OriginalFileName": ""
+        },
+        "Pic500x500": "https://images.icecat.biz/img/gallery_mediums/952475bfdf7890f47d03532c0c15f595c3236439.jpg",
+        "ThumbPicSize": "1937",
+        "Pic500x500Size": "23783",
+        "Pic500x500Width": "500",
+        "Pic500x500Height": "429"
+      },
+      {
+        "ID": "102686411",
+        "No": "3",
+        "Pic": "https://images.icecat.biz/img/gallery/04523964a99e0c68a5320792caa048369e8541dc.jpg",
+        "Size": "266949",
+        "Type": "ProductImage",
+        "IsMain": "N",
+        "LowPic": "https://images.icecat.biz/img/gallery_lows/314709c3709b46853b64b969818e97678276f845.jpg",
+        "LowSize": "6791",
+        "Updated": "2025-03-05 11:12:41",
+        "LowWidth": "200",
+        "PicWidth": "1600",
+        "ThumbPic": "https://images.icecat.biz/img/gallery_thumbs/a41b2816d6a2c20ba4e58d33158daf3db7184a66.jpg",
+        "IsPrivate": "0",
+        "LowHeight": "172",
+        "PicHeight": "1374",
+        "Attributes": {
+          "OriginalFileName": ""
+        },
+        "Pic500x500": "https://images.icecat.biz/img/gallery_mediums/049f3fc9cb55e0b2b3e73adf6c77cea93f0c6745.jpg",
+        "ThumbPicSize": "2222",
+        "Pic500x500Size": "29229",
+        "Pic500x500Width": "500",
+        "Pic500x500Height": "429"
+      }
+    ],
+    "Reviews": [],
+    "Variants": [],
+    "Dictionary": {
+      "desc": "Descripci&oacute;n",
+      "specs": "Especificaciones",
+      "video": "Video",
+      "pdf_url": "User manual",
+      "cat_name": "Categor&iacute;a",
+      "ean_code": "C&oacute;digo EAN/UPC",
+      "flash360": "3D tour",
+      "pdf_specs": "Folleto",
+      "prod_code": "C&oacute;digo del producto",
+      "model_name": "Nombre de producto",
+      "back_to_top": "Volver arriba",
+      "html_content": "",
+      "release_date": "Release date",
+      "supplier_name": "Marca",
+      "zoom_panel_in": "Zoom in",
+      "demo_msg_part1": "Ahora est&aacute; usando una cuenta demo. Por favor, utilice su propia cuenta Icecat",
+      "demo_msg_part2": "Su nombre de usuario de Icecat",
+      "demo_msg_part3": "Si no tiene una cuenta en Icecat, reg&iacute;strese aqu&iacute; de forma gratuita",
+      "marketing_text": "Descripción",
+      "product_family": "Familia de productos",
+      "product_series": "Series de Productos",
+      "reasons_to_buy": "Razones para comprar",
+      "zoom_panel_out": "Zoom out",
+      "eu_energy_label": "EU Energy Label",
+      "zoom_panel_init": "Original size",
+      "demo_insert_desc": "Esta es una demo de una inserci&oacute;n de ficha de producto Icecat LIVE en su sitio web. Imagine que esta ficha t&eacute;cnica est&aacute; incluida en la p&aacute;gina del producto de su tienda online.",
+      "eu_product_fiche": "EU Product Fiche",
+      "zoom_panel_dragg": "Mouse dragging",
+      "options_head_name": "Options",
+      "reviews_head_name": "Reviews",
+      "link_integrate_desk": "How to integrate Icecat LIVE JavaScript.",
+      "repairability_index": "Repairability index"
+    },
+    "Multimedia": [
+      {
+        "ID": "00000000-0000-0000-0000-000000000000",
+        "URL": "https://icecat.biz/rest/product-pdf?productId=37121507&lang=es",
+        "Size": "0",
+        "Type": "leaflet",
+        "IsVideo": 0,
+        "Updated": "2025-11-07 17:21:19",
+        "Language": "ES",
+        "IsPrivate": "0",
+        "KeepAsUrl": "0",
+        "ContentType": "application/pdf",
+        "Description": "Brochure Logitech 910-005235"
+      }
+    ],
+    "DemoAccount": false,
+    "GeneralInfo": {
+      "GTIN": [
+        "0097855133991",
+        "097855133991",
+        "5715063034071"
+      ],
+      "SEOs": {},
+      "Brand": "Logitech",
+      "GTINs": [
+        {
+          "GTIN": "0097855133991",
+          "IsApproved": true
+        },
+        {
+          "GTIN": "097855133991",
+          "IsApproved": true
+        },
+        {
+          "GTIN": "5715063034071",
+          "IsApproved": true
+        }
+      ],
+      "Title": "Logitech 910-005235 ratón RF inalámbrico",
+      "BrandID": "91",
+      "Category": {
+        "Name": {
+          "Value": "Ratones",
+          "Language": "ES"
+        },
+        "CategoryID": "195"
+      },
+      "IcecatId": 37121507,
+      "BrandInfo": {
+        "BrandLogo": "https://images.icecat.biz/img/brand/thumb/91_bf7a9464d0ee47adb5c3e01390b0eba5.jpg",
+        "BrandName": "Logitech",
+        "BrandLocalName": ""
+      },
+      "BrandLogo": "https://images.icecat.biz/img/brand/thumb/91_bf7a9464d0ee47adb5c3e01390b0eba5.jpg",
+      "TitleInfo": {
+        "BrandLocalTitle": {
+          "Value": "",
+          "Language": "ES"
+        },
+        "GeneratedIntTitle": "Logitech 910-005235 mouse",
+        "GeneratedLocalTitle": {
+          "Value": "Logitech 910-005235 ratón RF inalámbrico",
+          "Language": "ES"
+        }
+      },
+      "Description": {},
+      "ProductName": "910-005235",
+      "ReleaseDate": "",
+      "BulletPoints": {},
+      "BrandPartCode": "910-005235",
+      "EndOfLifeDate": "",
+      "ProductFamily": {},
+      "ProductSeries": {
+        "SeriesID": "1"
+      },
+      "ProductNameInfo": {
+        "ProductIntName": "910-005235",
+        "ProductLocalName": {
+          "Value": "",
+          "Language": "ES"
+        }
+      },
+      "SummaryDescription": {
+        "LongSummaryDescription": "Logitech 910-005235. Interfaz del dispositivo: RF inalámbrico. Color del producto: Negro",
+        "ShortSummaryDescription": "Logitech 910-005235, RF inalámbrico, Negro"
+      },
+      "GeneratedBulletPoints": {}
+    },
+    "FeatureLogos": [],
+    "ProductStory": [],
+    "ReasonsToBuy": [],
+    "FeaturesGroups": [
+      {
+        "ID": 31193,
+        "SortNo": "110",
+        "Features": [
+          {
+            "ID": 874223212,
+            "Type": "dropdown",
+            "Value": "RF Wireless",
+            "SortNo": "115",
+            "Feature": {
+              "ID": "8510",
+              "Name": {
+                "Value": "Interfaz del dispositivo",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "29",
+                "Sign": "",
+                "Signs": {
+                  "_": "",
+                  "ID": "",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "RF Wireless",
+            "Localized": 0,
+            "Mandatory": "1",
+            "LocalValue": "RF inalámbrico",
+            "Searchable": "1",
+            "Description": "The ports (sockets) where the device connects with other devices.",
+            "CategoryFeatureId": "50457",
+            "PresentationValue": "RF inalámbrico",
+            "CategoryFeatureGroupID": "31193"
+          }
+        ],
+        "FeatureGroup": {
+          "ID": "156",
+          "Name": {
+            "Value": "Ratón",
+            "Language": "ES"
+          }
+        }
+      },
+      {
+        "ID": 10741,
+        "SortNo": "90",
+        "Features": [
+          {
+            "ID": 874223088,
+            "Type": "dropdown",
+            "Value": "Black",
+            "SortNo": "280",
+            "Feature": {
+              "ID": "1766",
+              "Name": {
+                "Value": "Color del producto",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "29",
+                "Sign": "",
+                "Signs": {
+                  "_": "",
+                  "ID": "",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "Black",
+            "Localized": 0,
+            "Mandatory": "1",
+            "LocalValue": "Negro",
+            "Searchable": "0",
+            "Description": "The colour e.g. red",
+            "CategoryFeatureId": "12640",
+            "PresentationValue": "Negro",
+            "CategoryFeatureGroupID": "10741"
+          }
+        ],
+        "FeatureGroup": {
+          "ID": "148",
+          "Name": {
+            "Value": "Diseño",
+            "Language": "ES"
+          }
+        }
+      },
+      {
+        "ID": 915,
+        "SortNo": "35",
+        "Features": [
+          {
+            "ID": 874223102,
+            "Type": "multi_dropdown",
+            "Value": "Y",
+            "SortNo": "100",
+            "Feature": {
+              "ID": "7986",
+              "Name": {
+                "Value": "Sistema operativo Windows soportado",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "29",
+                "Sign": "",
+                "Signs": {
+                  "_": "",
+                  "ID": "",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "Y",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "Si",
+            "Searchable": "0",
+            "Description": "Windows vesions wich can be used with the device.",
+            "CategoryFeatureId": "50165",
+            "PresentationValue": "Si",
+            "CategoryFeatureGroupID": "915"
+          },
+          {
+            "ID": 874223114,
+            "Type": "multi_dropdown",
+            "Value": "Y",
+            "SortNo": "95",
+            "Feature": {
+              "ID": "7987",
+              "Name": {
+                "Value": "Sistema operativo MAC soportado",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "29",
+                "Sign": "",
+                "Signs": {
+                  "_": "",
+                  "ID": "",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "Y",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "Si",
+            "Searchable": "0",
+            "Description": "Mac operating systems e.g. OS X can be used with the device.",
+            "CategoryFeatureId": "50166",
+            "PresentationValue": "Si",
+            "CategoryFeatureGroupID": "915"
+          },
+          {
+            "ID": 874223141,
+            "Type": "multi_dropdown",
+            "Value": "Y",
+            "SortNo": "90",
+            "Feature": {
+              "ID": "7988",
+              "Name": {
+                "Value": "Sistema operativo Linux soportado",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "29",
+                "Sign": "",
+                "Signs": {
+                  "_": "",
+                  "ID": "",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "Y",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "Si",
+            "Searchable": "0",
+            "Description": "8 RT. Linux (9.4, 9.5), Red Hat Enterprise Linux 5.0 (supported with a pre-built package); SUSE Linux (10.3, 11.0, 11, 11.1, 11.2), Fedora (9, 9.0, 10, 10.0, 11.0, 11, 12, 12.0), Ubuntu (8.04, 8.04.1, 8.04.2, 8.10, 9.04, 9.10, 10.04), Debian (5.0, 5.0.1, 5.0.2, 5.0.3)",
+            "CategoryFeatureId": "50167",
+            "PresentationValue": "Si",
+            "CategoryFeatureGroupID": "915"
+          }
+        ],
+        "FeatureGroup": {
+          "ID": "8",
+          "Name": {
+            "Value": "Requisitos del sistema",
+            "Language": "ES"
+          }
+        }
+      },
+      {
+        "ID": 864,
+        "SortNo": "10",
+        "Features": [
+          {
+            "ID": 874223091,
+            "Type": "numerical",
+            "Value": "9",
+            "SortNo": "50",
+            "Feature": {
+              "ID": "1649",
+              "Name": {
+                "Value": "Ancho",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "24",
+                "Sign": "",
+                "Signs": {
+                  "_": "mm",
+                  "ID": "7436",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "9",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "9",
+            "Searchable": "0",
+            "Description": "The measurement or extent of something from side to side.",
+            "CategoryFeatureId": "27079",
+            "PresentationValue": "9 mm",
+            "CategoryFeatureGroupID": "864"
+          },
+          {
+            "ID": 874223094,
+            "Type": "numerical",
+            "Value": "6",
+            "SortNo": "49",
+            "Feature": {
+              "ID": "1650",
+              "Name": {
+                "Value": "Profundidad",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "24",
+                "Sign": "",
+                "Signs": {
+                  "_": "mm",
+                  "ID": "7436",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "6",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "6",
+            "Searchable": "0",
+            "Description": "The distance from the front to the back of something.",
+            "CategoryFeatureId": "27073",
+            "PresentationValue": "6 mm",
+            "CategoryFeatureGroupID": "864"
+          },
+          {
+            "ID": 874223097,
+            "Type": "numerical",
+            "Value": "15",
+            "SortNo": "48",
+            "Feature": {
+              "ID": "1464",
+              "Name": {
+                "Value": "Altura",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "24",
+                "Sign": "",
+                "Signs": {
+                  "_": "mm",
+                  "ID": "7436",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "15",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "15",
+            "Searchable": "0",
+            "Description": "Height of the product",
+            "CategoryFeatureId": "27074",
+            "PresentationValue": "15 mm",
+            "CategoryFeatureGroupID": "864"
+          },
+          {
+            "ID": 874223099,
+            "Type": "numerical",
+            "Value": "1.23",
+            "SortNo": "45",
+            "Feature": {
+              "ID": "94",
+              "Name": {
+                "Value": "Peso",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "38",
+                "Sign": "",
+                "Signs": {
+                  "_": "g",
+                  "ID": "7447",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "1.23",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "1,23",
+            "Searchable": "0",
+            "Description": "Peso del producto sin embalaje (peso neto). Si es posible, se da el peso neto incluyendo los accesorios y suministros estándar. Tenga en cuenta que a veces el fabricante deja de lado el peso de los accesorios y / o suministros.",
+            "CategoryFeatureId": "82270",
+            "PresentationValue": "1,23 g",
+            "CategoryFeatureGroupID": "864"
+          }
+        ],
+        "FeatureGroup": {
+          "ID": "14",
+          "Name": {
+            "Value": "Peso y dimensiones",
+            "Language": "ES"
+          }
+        }
+      },
+      {
+        "ID": 3929,
+        "SortNo": "8",
+        "Features": [
+          {
+            "ID": 874223133,
+            "Type": "numerical",
+            "Value": "101.9",
+            "SortNo": "-21",
+            "Feature": {
+              "ID": "3808",
+              "Name": {
+                "Value": "Ancho del paquete",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "24",
+                "Sign": "",
+                "Signs": {
+                  "_": "mm",
+                  "ID": "7436",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "101.9",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "101,9",
+            "Searchable": "0",
+            "Description": "The distance from one side of the packaging to the other.",
+            "CategoryFeatureId": "21865",
+            "PresentationValue": "101,9 mm",
+            "CategoryFeatureGroupID": "3929"
+          },
+          {
+            "ID": 874223134,
+            "Type": "numerical",
+            "Value": "110",
+            "SortNo": "-22",
+            "Feature": {
+              "ID": "3806",
+              "Name": {
+                "Value": "Profundidad del paquete",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "24",
+                "Sign": "",
+                "Signs": {
+                  "_": "mm",
+                  "ID": "7436",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "110",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "110",
+            "Searchable": "0",
+            "Description": "The distance from the front to the back of the packaging.",
+            "CategoryFeatureId": "27076",
+            "PresentationValue": "110 mm",
+            "CategoryFeatureGroupID": "3929"
+          },
+          {
+            "ID": 874223123,
+            "Type": "numerical",
+            "Value": "16",
+            "SortNo": "-23",
+            "Feature": {
+              "ID": "3807",
+              "Name": {
+                "Value": "Altura del paquete",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "24",
+                "Sign": "",
+                "Signs": {
+                  "_": "mm",
+                  "ID": "7436",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "16",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "16",
+            "Searchable": "0",
+            "Description": "The distance from the top to the bottom of the packaging.",
+            "CategoryFeatureId": "21862",
+            "PresentationValue": "16 mm",
+            "CategoryFeatureGroupID": "3929"
+          },
+          {
+            "ID": 874223137,
+            "Type": "numerical",
+            "Value": "16",
+            "SortNo": "-23",
+            "Feature": {
+              "ID": "762",
+              "Name": {
+                "Value": "Peso del paquete",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "38",
+                "Sign": "",
+                "Signs": {
+                  "_": "g",
+                  "ID": "7447",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "16",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "16",
+            "Searchable": "0",
+            "Description": "Weight of the packaged product.",
+            "CategoryFeatureId": "27075",
+            "PresentationValue": "16 g",
+            "CategoryFeatureGroupID": "3929"
+          }
+        ],
+        "FeatureGroup": {
+          "ID": "67",
+          "Name": {
+            "Value": "Empaquetado",
+            "Language": "ES"
+          }
+        }
+      },
+      {
+        "ID": 27940,
+        "SortNo": "6",
+        "Features": [
+          {
+            "ID": 874223148,
+            "Type": "y_n",
+            "Value": "N",
+            "SortNo": "95",
+            "Feature": {
+              "ID": "4949",
+              "Name": {
+                "Value": "Pilas incluidas",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "26",
+                "Sign": "",
+                "Signs": {
+                  "_": "",
+                  "ID": "",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "0",
+            "RawValue": "N",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "No",
+            "Searchable": "0",
+            "Description": "",
+            "CategoryFeatureId": "49568",
+            "PresentationValue": "No",
+            "CategoryFeatureGroupID": "27940"
+          }
+        ],
+        "FeatureGroup": {
+          "ID": "116",
+          "Name": {
+            "Value": "Contenido del embalaje",
+            "Language": "ES"
+          }
+        }
+      },
+      {
+        "ID": 10744,
+        "SortNo": "-12",
+        "Features": [
+          {
+            "ID": 874223084,
+            "Type": "text",
+            "Value": "USB receiver",
+            "SortNo": "0",
+            "Feature": {
+              "ID": "14052",
+              "Name": {
+                "Value": "Tipo de producto",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "29",
+                "Sign": "",
+                "Signs": {
+                  "_": "",
+                  "ID": "",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "1",
+            "RawValue": "USB receiver",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "USB receiver",
+            "Searchable": "0",
+            "Description": "The sub-category of the product.",
+            "CategoryFeatureId": "226149",
+            "PresentationValue": "USB receiver",
+            "CategoryFeatureGroupID": "10744"
+          }
+        ],
+        "FeatureGroup": {
+          "ID": "0",
+          "Name": {
+            "Value": "Detalles técnicos",
+            "Language": "ES"
+          }
+        }
+      },
+      {
+        "ID": 6611,
+        "SortNo": "-100",
+        "Features": [
+          {
+            "ID": 0,
+            "Type": "textarea",
+            "Value": "",
+            "SortNo": "0",
+            "Feature": {
+              "ID": "861",
+              "Name": {
+                "Value": "Requisitos mínimos del sistema",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "29",
+                "Sign": "",
+                "Signs": {
+                  "_": "",
+                  "ID": "",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 558177118,
+            "Optional": "1",
+            "RawValue": "",
+            "Localized": 1,
+            "Mandatory": "0",
+            "LocalValue": "Puerto USB\nConexión a Internet para descargas de software",
+            "Searchable": "0",
+            "Description": "",
+            "CategoryFeatureId": "20138",
+            "PresentationValue": "Puerto USB\nConexión a Internet para descargas de software",
+            "CategoryFeatureGroupID": "6611"
+          }
+        ],
+        "FeatureGroup": {
+          "ID": "146",
+          "Name": {
+            "Value": "Otras características",
+            "Language": "ES"
+          }
+        }
+      },
+      {
+        "ID": 15697,
+        "SortNo": "-100",
+        "Features": [
+          {
+            "ID": 874223128,
+            "Type": "numerical",
+            "Value": "201",
+            "SortNo": "-104",
+            "Feature": {
+              "ID": "4457",
+              "Name": {
+                "Value": "Ancho de la caja principal",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "24",
+                "Sign": "",
+                "Signs": {
+                  "_": "mm",
+                  "ID": "7436",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "1",
+            "RawValue": "201",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "201",
+            "Searchable": "0",
+            "Description": "",
+            "CategoryFeatureId": "144740",
+            "PresentationValue": "201 mm",
+            "CategoryFeatureGroupID": "15697"
+          },
+          {
+            "ID": 874223111,
+            "Type": "numerical",
+            "Value": "249",
+            "SortNo": "-106",
+            "Feature": {
+              "ID": "22658",
+              "Name": {
+                "Value": "Longitud de la caja",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "24",
+                "Sign": "",
+                "Signs": {
+                  "_": "mm",
+                  "ID": "7436",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "1",
+            "RawValue": "249",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "249",
+            "Searchable": "0",
+            "Description": "",
+            "CategoryFeatureId": "144741",
+            "PresentationValue": "249 mm",
+            "CategoryFeatureGroupID": "15697"
+          },
+          {
+            "ID": 874223107,
+            "Type": "numerical",
+            "Value": "136",
+            "SortNo": "-108",
+            "Feature": {
+              "ID": "4456",
+              "Name": {
+                "Value": "Alto de la caja principal",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "24",
+                "Sign": "",
+                "Signs": {
+                  "_": "mm",
+                  "ID": "7436",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "1",
+            "RawValue": "136",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "136",
+            "Searchable": "0",
+            "Description": "",
+            "CategoryFeatureId": "144742",
+            "PresentationValue": "136 mm",
+            "CategoryFeatureGroupID": "15697"
+          },
+          {
+            "ID": 874223117,
+            "Type": "numerical",
+            "Value": "1126",
+            "SortNo": "-110",
+            "Feature": {
+              "ID": "19016",
+              "Name": {
+                "Value": "Peso del envase completo",
+                "Language": "ES"
+              },
+              "Sign": "",
+              "Measure": {
+                "ID": "38",
+                "Sign": "",
+                "Signs": {
+                  "_": "g",
+                  "ID": "7447",
+                  "Language": "ES"
+                }
+              }
+            },
+            "LocalID": 0,
+            "Optional": "1",
+            "RawValue": "1126",
+            "Localized": 0,
+            "Mandatory": "0",
+            "LocalValue": "1,13",
+            "Searchable": "0",
+            "Description": "",
+            "CategoryFeatureId": "144743",
+            "PresentationValue": "1,13 kg",
+            "CategoryFeatureGroupID": "15697"
+          }
+        ],
+        "FeatureGroup": {
+          "ID": "198",
+          "Name": {
+            "Value": "Datos logísticos",
+            "Language": "ES"
+          }
+        }
+      }
+    ],
+    "ProductRelated": [],
+    "CatalogObjectCloud": {}
   }
-]
+}
